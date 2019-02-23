@@ -1,0 +1,28 @@
+{% extends 'restaurant/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+Add Meal
+{% endblock %}
+
+
+{% block page %}
+    <div class="col-lg-offset-2 col-lg-8">
+        <div class="panel">
+            <div class="panel-heading bg-blue">
+                <h4 class="panel-title text-center text-white">
+                    Edit Meal
+                </h4>
+            </div>
+            <div class="panel-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
